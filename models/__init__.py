@@ -1,9 +1,5 @@
-from models.segmentor import  VMamba_seghead
-
-# def build_model(args):
-#     return Mymodelbuild(args)
+from models.segmentor import  build_MixerCSeg
 
 __all__ = [
-    # 'Mymodelbuild',
-    'VMamba_seghead'
+    'build_MixerCSeg'
 ]

@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 from timm.models.layers import SqueezeExcite
-from fvcore.nn import FlopCountAnalysis, parameter_count
 
 
 class DWConv(nn.Module):
@@ -210,22 +209,3 @@ class PatchMerging(nn.Module):
 
 
 
-
-
-if __name__ == '__main__':
-    device = torch.device('cuda')
-    inp = torch.rand((1, 3, 512,512)).to(device)
-    model = Stem(
-        in_dim=3,
-        dim=32,
-    )
-    model.to(device)
-    # 计算 FLOPs
-
-    flop_analyzer = FlopCountAnalysis(model, inp)
-    flops = flop_analyzer.total()
-    # 计算 Params
-    params = parameter_count(model)[""]
-    print("===============================")
-    print(f"FLOPs: {flops / 1e9:.2f} G")
-    print(f"Params: {params / 1e6:.2f} M")

@@ -1,59 +1,58 @@
-# MixerCSeg
-MixerCSeg: An Efficient Mixer Architecture for Crack Segmentation via Decoupled Mamba Attention
-<!-- PROJECT SHIELDS -->
+<div align="center">
+<h1>[CVPR 2026] MixerCSeg </h1>
+<h3>MixerCSeg: An Efficient Mixer Architecture for Crack Segmentation via Decoupled Mamba Attention</h3>
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+Zilong Zhao<sup>1</sup>,
+Zhengming Ding<sup>2</sup>,
+Pei Niu<sup>1</sup>, 
+Wenhao Sun<sup>1</sup>, 
+Feng Guo<sup>1</sup>, 
 
-<!-- PROJECT LOGO -->
-<br />
+<sup>1</sup>  School of Qilu Transportation, Shandong University, China, <sup>2</sup>  Department of Computer Science, Tulane University,  USA.
+
+<!-- Paper: ([arXiv 2401.10166](https://arxiv.org/abs/2401.10166)) -->
+
+</div>
+
+
+<!-- ## 
+* [**updates**](#white_check_mark-updates)
+* [**abstract**](#abstract)
+* [**overview**](#overview--derivations)
+* [**main results**](#main-results)
+* [**getting started**](#getting-started)
+* [**star history**](#star-history)
+* [**citation**](#citation)
+* [**acknowledgment**](#acknowledgment) -->
+
+
+## 💥 News 💥
+* **`Feb. 27th, 2026`**: We have released the code for MixerCSeg.
+* **`Feb. 23th, 2026`**: **MixerCSeg has been accepted to CVPR 2026 !**
+
+
+
+## Abstract
 
 <p align="center">
-  <a href="https://github.com/shaojintian/Best_README_template/">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">"完美的"README模板</h3>
-  <p align="center">
-    一个"完美的"README模板去快速开始你的项目！
-    <br />
-    <a href="https://github.com/shaojintian/Best_README_template"><strong>探索本项目的文档 »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/shaojintian/Best_README_template">查看Demo</a>
-    ·
-    <a href="https://github.com/shaojintian/Best_README_template/issues">报告Bug</a>
-    ·
-    <a href="https://github.com/shaojintian/Best_README_template/issues">提出新特性</a>
-  </p>
-
+    <img src="./figure/overview.png" alt="Overview" />
 </p>
+Feature encoders play a key role in pixel-level crack segmentation by shaping the representation of fine textures and thin structures. Existing CNN-, Transformer-, and Mamba-based models each capture only part of the required spatial or structural information, leaving clear gaps in modeling complex crack patterns. To address this, we present MixerCSeg, a mixer architecture designed like a coordinated team of specialists, where CNN-like pathways focus on local textures, Transformer-style paths capture global dependencies, and Mamba-inspired flows model sequential context within a single encoder. At the core of MixerCSeg is the TransMixer, which explores Mamba’s latent attention behavior while establishing dedicated pathways that naturally express both locality and global awareness. To further enhance structural fidelity, we introduce a spatial block processing strategy and a Direction-guided Edge Gated Convolution (DEGConv) that strengthens edge sensitivity under irregular crack geometries with minimal computational overhead. A Spatial Refinement Multi-Level Fusion (SRF) module is then employed to refine multi-scale details without increasing complexity. Extensive experiments on multiple crack segmentation benchmarks show that MixerCSeg achieves state-of-the-art performance with only 2.05 GFLOPs and 2.54 M parameters, demonstrating both efficiency and strong representational capability.
 
 
- 本篇README.md面向开发者
- 
-## 目录
 
-- [上手指南](#上手指南)
-  - [开发前的配置要求](#开发前的配置要求)
-  - [安装步骤](#安装步骤)
-- [文件目录说明](#文件目录说明)
-- [开发的架构](#开发的架构)
-- [部署](#部署)
-- [使用到的框架](#使用到的框架)
-- [贡献者](#贡献者)
-  - [如何参与开源项目](#如何参与开源项目)
-- [版本控制](#版本控制)
-- [作者](#作者)
-- [鸣谢](#鸣谢)
 
-### 上手指南
-
-请将所有链接中的“shaojintian/Best_README_template”改为“your_github_name/your_repository”
+## Installation
+```
+conda create -n MixerCSeg python=3.10 -y
+conda activate MixerCSeg
+pip install torch==2.1.0+cu118 torchvision==0.16.0+cu118 -f https://download.pytorch.org/whl/torch_stable.html
+pip install numpy==1.23
+pip install -U openmim
+mim install mmcv-full
+pip install mmsegmentation==0.30.0
+pip install timm lmdb mmengine
+```
 
 
 
@@ -157,7 +156,7 @@ xxx@xxxx
 
 <!-- links -->
 [your-project-path]:shaojintian/Best_README_template
-[contributors-shield]: https://img.shields.io/github/contributors/shaojintian/Best_README_template.svg?style=flat-square
+
 [contributors-url]: https://github.com/shaojintian/Best_README_template/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/shaojintian/Best_README_template.svg?style=flat-square
 [forks-url]: https://github.com/shaojintian/Best_README_template/network/members

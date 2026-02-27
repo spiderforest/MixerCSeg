@@ -1,12 +1,11 @@
 import torch
 from torch import nn
-from fvcore.nn import FlopCountAnalysis, parameter_count
 from models.decoder import SRFModule
 from models.encoder import VSSEncoder
-from ptflops import get_model_complexity_info
 
 
-class Mymodel(nn.Module):
+
+class MixerCSeg(nn.Module):
     def __init__(self, backbone, embed_dims, args=None):
         super().__init__()
         self.args = args
@@ -48,14 +47,12 @@ class bce_dice(nn.Module):
 
 
 
-def VMamba_seghead(args):
+def build_MixerCSeg(args):
     device = torch.device(args.device)
     args.device = torch.device(args.device)
 
     embed_dim=[16,32,64,128]
-    # embed_dim=  [16,32,64,128]   [32,64,128,256]    [64,128,256,512]
-    
-    
+
     depths = [1,1,1,1]
     state_dim=[8,8,16,16]
 
@@ -66,24 +63,7 @@ def VMamba_seghead(args):
         mlp_ratio=2.,
         state_dim=state_dim,
         )
-    model = Mymodel(backbone, embed_dim, args).to(device)
-
-    ## 计算 FLOPs
-    # input_tensor = torch.rand([1,3,512,512]).to(device)
-    # flop_analyzer = FlopCountAnalysis(model, input_tensor)
-    # flops = flop_analyzer.total()
-    # # 计算 Params
-    # params = parameter_count(model)[""]
-    # print("===============================")
-    # print(f"FLOPs: {flops / 1e9:.2f} G")
-    # print(f"Params: {params / 1e6:.2f} M")
-
-
-
-    # flops, params = get_model_complexity_info(model, (3,512,512), as_strings=True,print_per_layer_stat=True)
-    # print("%s |%s" % (flops,params))
-
-
+    model = MixerCSeg(backbone, embed_dim, args).to(device)
 
     criterion = bce_dice(args)
     criterion.to(device)

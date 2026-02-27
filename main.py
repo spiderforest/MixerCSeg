@@ -9,7 +9,7 @@ import numpy as np
 import torch
 import util.misc as utils
 from engine import train_one_epoch
-from models import VMamba_seghead as build_model
+from models import build_MixerCSeg as build_model
 from datasets import create_dataset
 import cv2
 from eval.evaluate import eval
@@ -21,7 +21,7 @@ from mmengine.optim.scheduler.lr_scheduler import PolyLR
 
 
 def get_args_parser():
-    parser = argparse.ArgumentParser('newcseg FOR CRACK', add_help=False)
+    parser = argparse.ArgumentParser('MixerCSeg FOR CRACK', add_help=False)
 
     parser.add_argument('--BCELoss_ratio', default=0.87, type=float,
                         help='Weight ratio for Binary Cross Entropy Loss (0.0-1.0), should sum to 1 with DiceLoss_ratio')
@@ -29,7 +29,7 @@ def get_args_parser():
                         help='Weight ratio for Dice Loss (0.0-1.0), should sum to 1 with BCELoss_ratio')
     parser.add_argument('--Norm_Type', default='GN', type=str,
                         help='Normalization layer type [GN|BN], GN=GroupNorm')
-    parser.add_argument('--dataset_path', default="/home/linux/code/sod/dataset/DeepCrack",
+    parser.add_argument('--dataset_path', default="/home/linux/code/sod/dataset/CrackMap",
                         help='Root directory path for dataset')
     parser.add_argument('--batch_size_train', type=int, default=1,
                         help='Number of samples per training batch (affects memory usage)')
@@ -248,6 +248,6 @@ def main(args):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser('newcseg FOR CRACK', parents=[get_args_parser()])
+    parser = argparse.ArgumentParser('MixerCSeg FOR CRACK', parents=[get_args_parser()])
     args = parser.parse_args()
     main(args)
