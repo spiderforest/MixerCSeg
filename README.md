@@ -27,7 +27,8 @@ Feng Guo<sup>1</sup>, <sup>*</sup>
 
 
 ## 💥 News 💥
-* **`Feb. 27th, 2026`**: We have released the code for MixerCSeg.
+* **`Feb. 28th, 2026`**: **We have released the checkpoints and inference results for all datasets !**
+* **`Feb. 27th, 2026`**: **We have released the code for MixerCSeg!**
 * **`Feb. 23th, 2026`**: **MixerCSeg has been accepted to CVPR 2026 !**
 
 
@@ -80,9 +81,10 @@ Calculate performance metrics using the following command. Please ensure to conf
 python eval/evaluate.py --result_path [your_results_path]
 ```
 
-### Checkpoints and datasets
-
-
+### Datasets and Checkpoints
+- The datasets used in our work: [CamCrack79, DeepCrack, Crack500 and CrackMap](https://drive.google.com/drive/folders/1H-YwfW6gc--23bDyC92kQzTFK1a4KGmW?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto).
+- Obtain our [visualization results](https://drive.google.com/drive/folders/1yDdaMIrMsjmPcp2bssOG2-hKQi5UclKl?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto) and [checkpoints](https://drive.google.com/drive/folders/13cfgbyYiBMcxdLLkQTB984RyDQOiJ1B4?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto) on four datasets.
+- Move the downloaded checkpoint file to the designated path: `./checkpoints/weights/checkpoint_[your_dataset_name]/`
 
 
 
