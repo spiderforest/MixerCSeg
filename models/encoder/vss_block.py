@@ -25,7 +25,7 @@ class VSS(nn.Module):
                 TransMixer(hidden_dim=in_dim, ssm_d_state=state_dim, mlp_ratio=mlp_ratio, channel_first=True),
                 HoGEdgeGateConv(
                             in_dim=in_dim,
-                            nbins=180
+                            nbins=36
                 )
             )
             self.blocks.append(block)

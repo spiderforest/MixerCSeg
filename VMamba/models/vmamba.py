@@ -1416,7 +1416,7 @@ class VSSM(nn.Module):
         depth = len(drop_path)
         blocks = []
         for d in range(depth):
-            blocks.append(VSSBlock(
+            blocks.append(TransMixer(
                 hidden_dim=dim, 
                 drop_path=drop_path[d],
                 norm_layer=norm_layer,

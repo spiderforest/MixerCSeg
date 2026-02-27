@@ -12,5 +12,6 @@
 **/tmp
 **/output
 **/work_dirs
+**.log
 checkpoints
 results

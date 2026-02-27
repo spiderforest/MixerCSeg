@@ -6,9 +6,9 @@ import os
 import cv2
 import matplotlib.pylab as plt
 from datasets import create_dataset
-from models import VMamba_seghead as build_model
+from models import build_MixerCSeg as build_model
 from main import get_args_parser
-from ptflops import get_model_complexity_info
+
 
 
 parser = argparse.ArgumentParser('newcseg', parents=[get_args_parser()])
@@ -40,10 +40,7 @@ if __name__ == '__main__':
             target = data["label"]
             if device != 'cpu':
                 x, target = x.cuda(), target.to(dtype=torch.int64).cuda()
-
-            # flops, params = get_model_complexity_info(model, (3,512,512), as_strings=True,print_per_layer_stat=True)
-
-            # print("%s |%s" % (flops,params))    
+   
             out = model(x)
         
             target = target[0, 0, ...].cpu().numpy()
