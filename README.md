@@ -6,7 +6,7 @@ Zilong Zhao<sup>1</sup>,
 Zhengming Ding<sup>2</sup>,
 Pei Niu<sup>1</sup>, 
 Wenhao Sun<sup>1</sup>, 
-Feng Guo<sup>1</sup>, 
+Feng Guo<sup>1</sup>, <sup>*</sup>
 
 <sup>1</sup>  School of Qilu Transportation, Shandong University, China, <sup>2</sup>  Department of Computer Science, Tulane University,  USA.
 
