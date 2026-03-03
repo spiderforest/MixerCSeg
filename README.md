@@ -10,7 +10,7 @@ Feng Guo<sup>1</sup>, <sup>*</sup>
 
 <sup>1</sup>  School of Qilu Transportation, Shandong University, China, <sup>2</sup>  Department of Computer Science, Tulane University,  USA.
 
-<!-- Paper: ([arXiv 2401.10166](https://arxiv.org/abs/2401.10166)) -->
+Paper: ([arXiv 2603.01361](https://arxiv.org/abs/2603.01361))
 
 </div>
 
