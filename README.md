@@ -190,23 +190,13 @@ This project is based on [SCSegamba](https://github.com/Karl1109/SCSegamba), [VM
 ## Citation
 If you are using our MixerCSeg for your research, please cite the following paper:
 ```
-@article{liu2024vmamba,
-  title={VMamba: Visual State Space Model},
-  author={Liu, Yue and Tian, Yunjie and Zhao, Yuzhong and Yu, Hongtian and Xie, Lingxi and Wang, Yaowei and Ye, Qixiang and Liu, Yunfan},
-  journal={arXiv preprint arXiv:2401.10166},
-  year={2024}
+@article{zhao2026mixercseg,
+  title={MixerCSeg: An Efficient Mixer Architecture for Crack Segmentation via Decoupled Mamba Attention},
+  author={Zhao, Zilong and Ding, Zhengming and Niu, Pei and Sun, Wenhao and Guo, Feng},
+  journal={arXiv preprint arXiv:2603.01361},
+  year={2026}
 }
 ```
-
-## Concat
-
-If you have any other questions, feel free to contact me at **zzl000503@163.com**.
-
-
-
-
-
-``` -->
 
 ## Concat
 
